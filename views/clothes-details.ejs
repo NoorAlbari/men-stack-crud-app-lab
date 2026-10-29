@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <h1>Clothing Details :</h1>
+        <br>
+        <img src="<%= clothes.imageAdress%>">
+        <br>
+        <p>Name :<%= clothes.itemName%>
+        </p>
+        <br>
+        <p>For :<%= clothes.forWomenOrMenOrKids%>
+        </p>
+        <br>
+        <p>Type Of Clothing :<%= clothes.typeOfClothing%>
+        </p>
+        <br>
+        <p>Price :<%= clothes.price%> BD</p>
+        <br>
+        <p>Sizing :<%= clothes.sizing%>
+        </p>
+
+    </form>
+    <form action="/list-clothes/<%=clothes._id%>/?_method=Delete" method="post">
+        <button>Delete</button>
+    </form>
+    <form action="/list-clothes/<%=clothes._id%>/edit" method="get">
+        <button>Edit</button>
+    </form>
+
+</body>
+
+</html>

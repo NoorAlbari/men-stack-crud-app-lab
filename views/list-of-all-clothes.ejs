@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('./partials/navbar') %>
+        <h1>List Of Clothing Available To Sale</h1>
+        <P>All ADDED CLOTHES ARE In A VERY GOOD CONDITION</P>
+        <% if(clothes.length===0) {%>
+            <p>No Items Available Yet.</p>
+            <a href="/add-clothes/new">CLICK HERE TO ADD CLOTHES</a>
+
+            <% } %>
+            <ul>
+                <% for(let oneItem of clothes){%>
+                    <li><a href="/list-clothes/<%= oneItem._id%>"><%= oneItem.itemName%></a></li>
+                    <% } %>
+
+                    </ul>
+</body>
+
+</html>

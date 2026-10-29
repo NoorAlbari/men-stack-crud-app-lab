@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Edit Clothing Info </h1>
+
+    <form method="post" action="/list-clothes/<%=clothes._id%>?_method=PUT">
+        <label for="imageAdress">Image Adress :</label>
+        <input name="imageAdress" id="imageAdress" type="text" value="<%= clothes.imageAdress%>">
+        <br>
+        <br>
+
+        <label for="itemName">Clothing Name :</label>
+        <input name="itemName" id="itemName" type="text" value="<%= clothes.itemName%>">
+        <br>
+        <br>
+
+        <label for="forWomenOrMenOrKids">For :</label>
+        <select name="forWomenOrMenOrKids" id="forWomenOrMenOrKids">
+            <option value="Women" <% if(clothes.forWomenOrMenOrKids==="Women" ){ %>selected<% } %>>Women</option>
+            <option value="Men" <% if(clothes.forWomenOrMenOrKids==="Men" ){ %>selected<% } %>>Men</option>
+            <option value="Kids" <% if(clothes.forWomenOrMenOrKids==="Kids" ){ %>selected<% } %>>Kids</option>
+        </select>
+        <br>
+        <br>
+
+        <label for="typeOfClothing">Type Of Clothing: </label>
+        <select name="typeOfClothing" id="typeOfClothing">
+            <option value="Dresses" <% if(clothes.typeOfClothing==="Dresses" ){ %>selected<% } %>>Dresses</option>
+            <option value="T-shirts" <% if(clothes.typeOfClothing==="T-shirts" ){ %>selected<% } %>>T-shirts</option>
+            <option value="Pants" <% if(clothes.typeOfClothing==="Pants" ){ %>selected<% } %>>Pants</option>
+            <option value="Two piece" <% if(clothes.typeOfClothing==="Two piece" ){ %>selected<% } %>>Two piece</option>
+        </select>
+        <br>
+        <br>
+
+        <label for="price">Price :</label>
+        <input name="price" id="price" type="number" value="<%= clothes.price %>">
+        <br>
+        <br>
+
+        <label for="sizing">Sizing :</label>
+        <select name="sizing" id="sizing">
+            <option value="S" <% if(clothes.sizing==="S" ){ %>selected<% } %>>S</option>
+            <option value="M" <% if(clothes.sizing==="M" ){ %>selected<% } %>>M</option>
+            <option value="L" <% if(clothes.sizing==="L" ){ %>selected<% } %>>L</option>
+            <option value="XL" <% if(clothes.sizing==="XL" ){ %>selected<% } %>>XL</option>
+        </select>
+        <br>
+        <br>
+        <button>SAVE</button>
+
+    </form>
+</body>
+
+</html>
